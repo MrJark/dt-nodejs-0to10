@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-dt-0to10",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Curso de NodeJS de DevTalles",
+  "main": "index.js",
+  "homepage": "https://github.com/MrJark/nodejs-dt-0to10#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrJark/nodejs-dt-0to10.git"
+  },
+  "workspaces":[
+    
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Chema",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrJark/nodejs-dt-0to10/issues"
+  },
+  "devDependencies": {
+    "eslint": "8.51.0",
+    "standard": "17.1.0"
+  }
+}
