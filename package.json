@@ -9,8 +9,8 @@
     "type": "git",
     "url": "git+https://github.com/MrJark/nodejs-dt-0to10.git"
   },
-  "workspaces":[
-    
+  "workspaces": [
+    "02-bases"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "eslint": "8.51.0",
+    "nodemon": "3.0.1",
     "standard": "17.1.0"
   }
 }

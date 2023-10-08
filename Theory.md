@@ -2,6 +2,12 @@
 
 Curso de DevTalles de Nodejs que va de 0 to 10
 
+## Instalaciones imprescindibles
+
+* [Nodemon](https://www.npmjs.com/package/nodemon) le dice a Node que cada vez que tenga un cambio haga un **npm start** para que refleje los cambios. **No** se debe usar Nodemon para producción, solo para dependencias.
+  
+Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el nodemon que es simplemente ejecutar el comando `npm run dev`
+
 ## Datos interesantes a tener en cuenta
 
 * Los elementos de NODE se visualizan en consola, lo más comúnn
