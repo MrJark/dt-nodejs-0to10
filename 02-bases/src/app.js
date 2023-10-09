@@ -3,14 +3,15 @@
 // const { emailTemplate } = require('./JS-fundation/01-template') // lo mismo que lo de arriba
 // require('./JS-fundation/02-destructuring')
 // const { getUserById } = require('./JS-fundation/03-callbacks')
-const { getUserById } = require('./JS-fundation/04-arrows')
+// const { getUserById } = require('./JS-fundation/04-arrows')
+require('./JS-fundation/05-factoryFN')
 
 // console.log(templateExports.emailTemplate, emailTemplate)
 
-const id = 2
-getUserById(id, (err, user) => { // esta función es lo que se le llama callback
-  if (err) {
-    throw new Error(err)
-  }
-  console.log(user)
-})
+// const id = 2
+// getUserById(id, (err, user) => { // esta función es lo que se le llama callback
+//   if (err) {
+//     throw new Error(err)
+//   }
+//   console.log(user)
+// })

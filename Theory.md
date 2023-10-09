@@ -2,9 +2,13 @@
 
 Curso de DevTalles de Nodejs que va de 0 to 10
 
-## Instalaciones imprescindibles
+## Instalaciones
 
 * [Nodemon](https://www.npmjs.com/package/nodemon) le dice a Node que cada vez que tenga un cambio haga un **npm start** para que refleje los cambios. **No** se debe usar Nodemon para producción, solo para dependencias.
+
+* Para generar [UUID](https://www.npmjs.com/package/uuid)randoms
+
+* Para calcular la fecha en años [npm](https://www.npmjs.com/package/get-age) ( este paquete es algo innecesario porque a más lean mejor)
   
 Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el nodemon que es simplemente ejecutar el comando `npm run dev`
 
@@ -15,6 +19,8 @@ Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el n
 * Para crear un package.json de cero tienes que poner en la terminal **npm init** y si le pones la bandera **-y** te lo hará de forma manual sino, te preguntará sobre los que poner en él.
 
 * Los callback hells son callback dentro de otros callbacks y así sucesivamente
+
+* Cuando uses paquetes de terceros, teines que tratar que tu código sea soft y fácilmente modificable. Tines que tener los archivos de terceros en un **ÚNICO** lugar concreto para que las modificaciones en el mismo sean sencillas. Esto es un principio _clean code_
 
 ### Event Loop & code execution
 
