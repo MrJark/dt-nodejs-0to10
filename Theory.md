@@ -12,7 +12,9 @@ Cuando vayas a intalar paquetes **debe** de estar justificado
 
 * Para calcular la fecha en años [npm](https://www.npmjs.com/package/get-age) ( este paquete es algo innecesario porque a más lean mejor)
 
-* [Axios](https://www.npmjs.com/package/axios) es un 
+* [Axios](https://www.npmjs.com/package/axios) sirve para manejar peticiones http/https
+
+* [Winston](https://www.npmjs.com/package/winston) es para manejar de una froma más eficiente los console.log
   
 Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el nodemon que es simplemente ejecutar el comando `npm run dev`
 

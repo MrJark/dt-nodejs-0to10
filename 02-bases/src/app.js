@@ -15,12 +15,16 @@
 //   console.log(user)
 // })
 
+const { buildLogger } = require('./plugins')
+const logger = buildLogger('app.js')
+logger.log('Hola mundo')
+
 // ? Promises with Axios
-const { getPokemonById } = require('./JS-fundation/09-withAxios')
-getPokemonById(151)
-  .then(pokemon => console.log(pokemon)) // gracias al return puesto antes del fetch puedes usar aquí los then ya que le dices que es una promesa
-  .catch(err => console.log(err))
-  .finally(() => console.log('Cest Fini'))
+// const { getPokemonById } = require('./JS-fundation/09-withAxios')
+// getPokemonById(151)
+//   .then(pokemon => console.log(pokemon)) // gracias al return puesto antes del fetch puedes usar aquí los then ya que le dices que es una promesa
+//   .catch(err => console.log(err))
+//   .finally(() => console.log('Cest Fini'))
 
 // ? Promises with wrapper
 // const { getPokemonById } = require('./JS-fundation/08-withWrapper')
