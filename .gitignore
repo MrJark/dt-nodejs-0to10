@@ -9,4 +9,4 @@ package-lock.json
 
 
 # log
-02-bases/*.log
+**/02-bases/*.log
