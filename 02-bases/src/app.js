@@ -5,9 +5,6 @@
 // const { getUserById } = require('./JS-fundation/03-callbacks')
 // const { getUserById } = require('./JS-fundation/04-arrows')
 
-const { getUUID, getAge } = require('./plugins') // POR EL FACTORY FUNCTION
-const { buildMakePerson } = require('./JS-fundation/05-factoryFN')
-
 // console.log(templateExports.emailTemplate, emailTemplate)
 
 // const id = 2
@@ -18,8 +15,17 @@ const { buildMakePerson } = require('./JS-fundation/05-factoryFN')
 //   console.log(user)
 // })
 
-// con lasfactory function, necesitas lo siguiente (en este caso):
-const makePerson = buildMakePerson({ getUUID, getAge }) // aquí están las dependencias y no el 05-factory
-const obj = { name: 'Jonh', birthday: '1997-06-28' }
-const john = makePerson(obj)
-console.log(john)
+const { getPokemonById } = require('./JS-fundation/06-promises')
+getPokemonById(151)
+  .then(pokemon => console.log(pokemon)) // gracias al return puesto antes del fetch puedes usar aquí los then ya que le dices que es una promesa
+  .catch(err => console.log(err))
+
+// ? Factory function 👇🏼
+// const { getUUID, getAge } = require('./plugins') // POR EL FACTORY FUNCTION
+// const { buildMakePerson } = require('./JS-fundation/05-factoryFN')
+
+// // con lasfactory function, necesitas lo siguiente (en este caso):
+// const makePerson = buildMakePerson({ getUUID, getAge }) // aquí están las dependencias y no el 05-factory
+// const obj = { name: 'Jonh', birthday: '1997-06-28' }
+// const john = makePerson(obj)
+// console.log(john)
