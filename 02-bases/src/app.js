@@ -15,10 +15,18 @@
 //   console.log(user)
 // })
 
-const { getPokemonById } = require('./JS-fundation/06-promises')
+// ? Promises with .then
+const { getPokemonById } = require('./JS-fundation/07-promisesAsync')
 getPokemonById(151)
   .then(pokemon => console.log(pokemon)) // gracias al return puesto antes del fetch puedes usar aquí los then ya que le dices que es una promesa
   .catch(err => console.log(err))
+  .finally(() => console.log('Cest Fini'))
+
+// ? Promises with .then
+// const { getPokemonById } = require('./JS-fundation/06-promisesThen')
+// getPokemonById(151)
+//   .then(pokemon => console.log(pokemon)) // gracias al return puesto antes del fetch puedes usar aquí los then ya que le dices que es una promesa
+//   .catch(err => console.log(err))
 
 // ? Factory function 👇🏼
 // const { getUUID, getAge } = require('./plugins') // POR EL FACTORY FUNCTION
