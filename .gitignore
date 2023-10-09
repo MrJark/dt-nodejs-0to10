@@ -1,4 +1,3 @@
-*.log
 
 # no rastreable
 node_modules/
@@ -7,3 +6,7 @@ package-lock.json
 
 # env
 .env
+
+
+# log
+02-bases/*.log
