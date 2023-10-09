@@ -1,9 +1,14 @@
 // esto lo he copiado de la doc de winston https://www.npmjs.com/package/winston
 const winston = require('winston')
+const { combine, timestamp, json } = winston.format
 
 const logger = winston.createLogger({
   level: 'info',
-  format: winston.format.json(),
+  // format: winston.format.json(), // otra forma es con el combine
+  format: combine(
+    timestamp(), // el momento en el tiempo en el que sucedio el problema
+    json() // el formato
+  ),
   // defaultMeta: { service: 'user-service' },
   transports: [
     //
@@ -19,7 +24,10 @@ const logger = winston.createLogger({
 module.exports = function buildLogger (service) {
   return {
     log: (message) => {
-      logger.log('info', { message, service })
+      logger.log('info', {
+        message,
+        service
+      })
     }
   }
 }

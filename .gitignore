@@ -1,7 +1,9 @@
+*.log
 
 # no rastreable
 node_modules/
 package-lock.json
+
 
 # env
 .env
