@@ -14,6 +14,8 @@ Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el n
 
 * Para crear un package.json de cero tienes que poner en la terminal **npm init** y si le pones la bandera **-y** te lo hará de forma manual sino, te preguntará sobre los que poner en él.
 
+* Los callback hells son callback dentro de otros callbacks y así sucesivamente
+
 ### Event Loop & code execution
 
 El código siempre síncrono y es el que se ejecuta **primero** por tanto, si tienes funciones que no son síncronas, se mandarán a Libuv para guardarlas hasta que se tengan todas las funciones sínconas y ahí ya se ejecuta el asíncrono. Ej: _app4.js_

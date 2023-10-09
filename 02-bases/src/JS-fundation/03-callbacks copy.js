@@ -9,12 +9,12 @@ function getUserById (id, callback) {
   const user = users.find(function (user) {
     return user.id === id
   })
-  console.log('hola 1')
+  // console.log('hola 1')
   if (!user) {
-    console.log('hola')
-    return callback(`User is not exist with ${id}`)
+    // console.log('hola')
+    return callback(`User is not exist with ${id}`) // sale un error por Standard pero funciona
   }
-  console.log('hola')
+  // console.log('hola')
   return callback(null, user)
 }
 
