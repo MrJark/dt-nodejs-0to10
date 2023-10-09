@@ -4,11 +4,15 @@ Curso de DevTalles de Nodejs que va de 0 to 10
 
 ## Instalaciones
 
+Cuando vayas a intalar paquetes **debe** de estar justificado
+
 * [Nodemon](https://www.npmjs.com/package/nodemon) le dice a Node que cada vez que tenga un cambio haga un **npm start** para que refleje los cambios. **No** se debe usar Nodemon para producción, solo para dependencias.
 
 * Para generar [UUID](https://www.npmjs.com/package/uuid)randoms
 
 * Para calcular la fecha en años [npm](https://www.npmjs.com/package/get-age) ( este paquete es algo innecesario porque a más lean mejor)
+
+* [Axios](https://www.npmjs.com/package/axios) es un 
   
 Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el nodemon que es simplemente ejecutar el comando `npm run dev`
 

@@ -2,10 +2,14 @@
 // export const { getAge } = require('./getAge.plugin')
 // export const { getUUID } = require('./getUUID.plugin')
 
+const { httpClientPlugin } = require('./httpClient.plugin')
+const { httpClientAxiosPlugin } = require('./httpClientAxios.plugin')
 const { getAge } = require('./getAge.plugin')
 const { getUUID } = require('./getUUID.plugin')
 
 module.exports = {
   getAge,
-  getUUID
+  getUUID,
+  httpClientPlugin,
+  httpClientAxiosPlugin
 }
