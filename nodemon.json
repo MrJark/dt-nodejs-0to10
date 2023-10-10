@@ -1,0 +1,8 @@
+{
+  "watch": [
+    "03-TypeScript/src"
+  ],
+  "ext": ".ts,.js",
+  "ignore": [],
+  "exec": "npx ts-node ./03-TypeScript/src/app.ts"
+}

@@ -25,5 +25,5 @@ const findHeroById = (id: number) => {
 	return heroes.find(hero => hero.id === id)
 }
 
-const hero = findHeroById(2)
-console.log(hero?.name)
+const hero = findHeroById(1)
+console.log(hero?.name ?? 'This id does not exist yet')
