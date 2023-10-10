@@ -15,9 +15,9 @@
 //   console.log(user)
 // })
 
-const { buildLogger } = require('./plugins')
-const logger = buildLogger('app.js')
-logger.log('Hola mundo')
+// const { buildLogger } = require('./plugins')
+// const logger = buildLogger('app.js')
+// logger.log('Hola mundo')
 
 // ? Promises with Axios
 // const { getPokemonById } = require('./JS-fundation/09-withAxios')
