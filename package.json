@@ -22,9 +22,11 @@
     "url": "https://github.com/MrJark/nodejs-dt-0to10/issues"
   },
   "devDependencies": {
+    "@types/node": "20.8.4",
     "eslint": "8.51.0",
     "nodemon": "3.0.1",
-    "standard": "17.1.0"
+    "standard": "17.1.0",
+    "typescript": "5.2.2"
   },
   "dependencies": {
     "axios": "1.5.1",
