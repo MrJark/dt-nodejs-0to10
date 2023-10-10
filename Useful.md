@@ -9,3 +9,7 @@
 5. Ejecuta el comando `node -v` para comprobar que la versión predeterminada ha cambiado.
 
 Si quieres eliminar alguna versión en concreto, ejecuta `nvm uninstall 10.24.1`
+
+## Configuración de Node con TypeScript
+
+[Link al Gist](https://gist.github.com/Klerith/47af527da090043f604b972b22dd4c01) de DevTalles
