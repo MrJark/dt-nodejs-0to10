@@ -1,6 +1,6 @@
 
 # no rastreable
-node_modules/
+node_modules
 package-lock.json
 
 
@@ -9,4 +9,7 @@ package-lock.json
 
 
 # log
-**/02-bases/*.log
+*.log
+
+# Mac
+.DS_store
