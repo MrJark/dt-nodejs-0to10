@@ -1,12 +1,12 @@
 {
-  // "include": [
-  //   "04-bases-to-test/src/**/*",
-  // ],
-  // "exclude": [
-  //   "node_modules",
-  //   "04-bases-to-test/**/*.spec.ts",
-  //   "04-bases-to-test/tests/**/*.test.ts"
-  // ],
+  "include": [
+    "04-bases-to-test/src/**/*",
+  ],
+  "exclude": [
+    "node_modules",
+    "04-bases-to-test/**/*.spec.ts",
+    "04-bases-to-test/tests/**/*.test.ts"
+  ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
     /* Projects */
