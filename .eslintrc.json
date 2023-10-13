@@ -34,6 +34,12 @@
         "semi": [
             "error",
             "never"
+        ],
+        "no-unused-vars": [
+            "error"
+        ],
+        "no-trailing-spaces": [
+            "error"
         ]
     }
 }

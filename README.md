@@ -10,13 +10,15 @@ Cuando vayas a intalar paquetes **debe** de estar justificado. Las instalaciones
 
 * Para generar [UUID](https://www.npmjs.com/package/uuid)randoms
 
-* Para calcular la fecha en años [npm](https://www.npmjs.com/package/get-age) ( este paquete es algo innecesario porque a más lean mejor). [Jest](https://jestjs.io/docs/getting-started)
+* Para calcular la fecha en años [npm](https://www.npmjs.com/package/get-age) ( este paquete es algo innecesario porque a más lean mejor). 
 
 * [Axios](https://www.npmjs.com/package/axios) sirve para manejar peticiones http/https
 
 * [Winston](https://www.npmjs.com/package/winston) es para manejar de una froma más eficiente los console.log
 
 * Configuración de [JEST + TypeScript + Node](https://gist.github.com/Klerith/98d7b1bc0f1525e892f260813cad1007). Como es un monorepo, las configuraciones del package.json si que las tengo que hacer en el archivo que quiero, en este caso en _04-bases-to-test_
+  * [Jest](https://jestjs.io/docs/getting-started)
+  `Dato`: a la hroa de crear la capeta de los test, es recomendable seguir la estructura que tienes en el src y no colocarlos de manera aleatoria. Si tienes _src/patatas/con/jamon.ts_ en la carpeta de test debería ser: _patatas/con/jamon.test.ts_
   
 Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el nodemon que es simplemente ejecutar el comando `npm run dev`
 

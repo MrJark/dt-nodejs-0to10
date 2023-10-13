@@ -12,7 +12,7 @@
 
 // const getPokemonById = require('./js-foundation/06-promises');
 
- 
+
 // const logger = buildLogger('app.js');
 
 // logger.log('Hola mundo');
