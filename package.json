@@ -11,7 +11,8 @@
   },
   "workspaces": [
     "02-bases",
-    "03-TypeScript"
+    "03-TypeScript",
+    "04-bases-to-test"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
