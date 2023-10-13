@@ -4,17 +4,19 @@ Curso de DevTalles de Nodejs que va de 0 to 10
 
 ## Instalaciones
 
-Cuando vayas a intalar paquetes **debe** de estar justificado
+Cuando vayas a intalar paquetes **debe** de estar justificado. Las instalaciones que estoy haciendo en este repo son en la raiz ya que estoy haciendo un monorepositorio multipaquete para evitar tantos node_modules en el mismo.
 
 * [Nodemon](https://www.npmjs.com/package/nodemon) le dice a Node que cada vez que tenga un cambio haga un **npm start** para que refleje los cambios. **No** se debe usar Nodemon para producción, solo para dependencias.
 
 * Para generar [UUID](https://www.npmjs.com/package/uuid)randoms
 
-* Para calcular la fecha en años [npm](https://www.npmjs.com/package/get-age) ( este paquete es algo innecesario porque a más lean mejor)
+* Para calcular la fecha en años [npm](https://www.npmjs.com/package/get-age) ( este paquete es algo innecesario porque a más lean mejor). [Jest](https://jestjs.io/docs/getting-started)
 
 * [Axios](https://www.npmjs.com/package/axios) sirve para manejar peticiones http/https
 
 * [Winston](https://www.npmjs.com/package/winston) es para manejar de una froma más eficiente los console.log
+
+* Configuración de [JEST + TypeScript + Node](https://gist.github.com/Klerith/98d7b1bc0f1525e892f260813cad1007)
   
 Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el nodemon que es simplemente ejecutar el comando `npm run dev`
 
