@@ -16,7 +16,7 @@ Cuando vayas a intalar paquetes **debe** de estar justificado. Las instalaciones
 
 * [Winston](https://www.npmjs.com/package/winston) es para manejar de una froma más eficiente los console.log
 
-* Configuración de [JEST + TypeScript + Node](https://gist.github.com/Klerith/98d7b1bc0f1525e892f260813cad1007)
+* Configuración de [JEST + TypeScript + Node](https://gist.github.com/Klerith/98d7b1bc0f1525e892f260813cad1007). Como es un monorepo, las configuraciones del package.json si que las tengo que hacer en el archivo que quiero, en este caso en _04-bases-to-test_
   
 Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el nodemon que es simplemente ejecutar el comando `npm run dev`
 
