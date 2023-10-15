@@ -21,4 +21,10 @@ export const yarg = yargs(hideBin(process.argv))
 		default: false,
 		describe: 'Show Multiplication table'
 	})
+	.check((argv, options ) => {
+		// los argv son aquellas options que has colocado arriba mientras que las options que envias 
+		console.log({argv, options})
+		
+		return true
+	})
 	.parseSync()
