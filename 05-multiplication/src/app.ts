@@ -1,6 +1,4 @@
+import { yarg } from './configs/plugins/yargs.plugin'
 
-console.log(process.argv)
 
-const [ tsnode, app, ...args] = process.argv
-
-console.log(tsnode, app, args)
+console.log(yarg)
