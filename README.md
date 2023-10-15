@@ -22,6 +22,8 @@ Cuando vayas a intalar paquetes **debe** de estar justificado. Las instalaciones
   
 Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el nodemon que es simplemente ejecutar el comando `npm run dev`
 
+* [Yargs](https://www.npmjs.com/package/yargs) Yargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface
+
 ## Datos interesantes a tener en cuenta
 
 * Los elementos de NODE se visualizan en consola, lo más comúnn
