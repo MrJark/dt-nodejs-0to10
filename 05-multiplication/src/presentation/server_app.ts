@@ -1,3 +1,4 @@
+import { CreateTable } from '../domain/useCases/create_table.useCase'
 
 interface RunOptions {
   base: number,
@@ -7,8 +8,12 @@ interface RunOptions {
 
 export class ServerApp {
 
-  static run( options: RunOptions ) {
-    console.log('Server running...', {options})
+  static run( {base, limit, showTable}: RunOptions ) {
+    console.log('Server running...')
+    
+    const table = new CreateTable().execute({ base, limit})
+
+    console.log(table, {showTable})
     
   }
 }
