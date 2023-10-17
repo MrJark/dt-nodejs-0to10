@@ -19,7 +19,7 @@ export class ServerApp {
 
     // console.log(table, {showTable})
 
-      ( wasCreated )
+    wasCreated
       ? console.log('File Created')
       : console.log('File not created')
       

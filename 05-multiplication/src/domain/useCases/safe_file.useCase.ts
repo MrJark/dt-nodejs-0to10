@@ -1,14 +1,17 @@
 import fs from 'fs' // esta import no debería estar aquí
 
-export interface SaveFileUseCase {
-  execute: ( options: Options ) => boolean,
-}
-
 export interface Options {
   fileContent: string,
   fileDestination?: string,
   fileName?: string,
 }
+
+export interface SaveFileUseCase {
+  //elimino el error con esto de que las options no son llamadas con la línea siguiente esto es por el linter
+  // eslint-disable-next-line no-unused-vars 
+  execute: ( options: Options ) => boolean,
+}
+
 
 export class SaveFile implements SaveFileUseCase {
 
