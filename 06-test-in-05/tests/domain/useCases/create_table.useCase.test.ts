@@ -25,7 +25,7 @@ describe( 'domain/useCases/create_table.useCase', () => {
     const createNewTable = new CreateTable()
     const table = createNewTable.execute( options )
     const rows = table.split( '\n' ).length
-    console.log( table );
+    // console.log( table );
 
 
     expect( table ).toContain( '3 x 8 = 24' )
