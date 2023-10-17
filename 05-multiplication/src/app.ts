@@ -11,8 +11,8 @@ import { ServerApp } from './presentation/server_app'
 
 async function main() {
   // console.log('1: Main') // este log 1 se ejecuta antes que el 2
-  const {b: base, l: limit, s: showTable} = yarg
+  const {b: base, l: limit, s: showTable, d: fileDestination, n: fileName} = yarg
   // console.log(yarg)
 
-  ServerApp.run({ base, limit, showTable})
+  ServerApp.run( { base, limit, showTable, fileDestination, fileName })
 }

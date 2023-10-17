@@ -7,19 +7,31 @@ export const yarg = yargs(hideBin(process.argv))
     alias: 'base',
     type: 'number',
     demandOption: true,
-    describe: 'Multiplication table base'
+    describe: 'Multiplication table base',
   })
   .option('l', {
     alias: 'limit',
     type: 'number',
     default: 10,
-    describe: 'Multiplication table limit'
+    describe: 'Multiplication table limit',
   })
   .option('s', {
     alias: 'show',
     type: 'boolean',
     default: false,
-    describe: 'Show Multiplication table'
+    describe: 'Show Multiplication table',
+  })
+  .option('n', {
+    alias: 'name',
+    type: 'string',
+    default: 'multiplication-table',
+    describe: 'File Name',
+  })
+  .option('d', {
+    alias: 'destination',
+    type: 'string',
+    default: 'outputs',
+    describe: 'File Destination'
   })
   .check((argv ) => { // ,options las he quitado para que no me de un error al no llamarlas por el ESlint
     // los argv son aquellas options que has colocado arriba mientras que las options que envias 

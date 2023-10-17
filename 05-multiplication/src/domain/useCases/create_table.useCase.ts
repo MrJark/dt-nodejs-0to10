@@ -1,5 +1,6 @@
 
 export interface CreateTableUseCase {
+  // eslint-disable-next-line no-unused-vars
   execute: ( options: CreateTableOptions ) => string,
 }
 
