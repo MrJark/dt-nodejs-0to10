@@ -1,8 +1,9 @@
 
 # no rastreable
-node_modules
+node_modules/
 package-lock.json
-
+dist/
+outputs/
 
 # env
 .env
