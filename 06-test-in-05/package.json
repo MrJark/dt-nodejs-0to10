@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node src/app.ts -b 10",
+    "dev": "ts-node src/app.ts -b 7",
     "devLoggic": "npx ts-node src/app.logic.ts",
     "dev:nodemon": "nodemon -b 3",
     "build": "rimraf ./dist && tsc",
-    "start": "npm run build && node dist/app.js"
+    "start": "npm run build && node dist/app.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "mrjark",
