@@ -14,3 +14,6 @@ outputs/
 
 # Mac
 .DS_store
+
+# Test
+testDestination/
