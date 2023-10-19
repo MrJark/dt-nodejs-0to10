@@ -1,8 +1,8 @@
 import fs from 'fs' // esto es lo que necesito para crear archivos en el root ( viene ya en node )
-import { yarg } from './configs/plugins/yargs.plugin'
+import { yarg } from './configs/plugins/args.plugin'
 
 // console.log(yarg)
-const {b: base = 2, l: limit = 10, s: showTable} = yarg
+const { b: base = 2, l: limit = 10, s: showTable } = yarg
 
 // let outputMessage:string = ''
 // const headerMessage = `
@@ -34,7 +34,7 @@ for ( let i = 1; i <= limit; i++ ) {
 }
 
 outputMessage = headerMessage + outputMessage
-if( showTable ) {
+if ( showTable ) {
   console.log( outputMessage )
 }
 

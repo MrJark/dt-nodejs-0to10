@@ -28,7 +28,7 @@ export class SaveFile implements SaveFileUseCase {
       fs.mkdirSync( fileDestination, { recursive: true } ) // crea el directorio
       fs.writeFileSync( `${fileDestination}/${fileName}.txt`, fileContent )// pra crear el archivo table-5 en la carpeta outputs
 
-      console.log( 'File created' )
+      // console.log( 'File created' ) // comento para no escuchar ruido en el test
       return true
     } catch ( err ) {
       // console.error( err ) // se puede hacer con winston para que en la terminal no haya ruido
