@@ -10,6 +10,11 @@ const runCommand = async ( args: string[] ) => {
 }
 
 describe( 'Test in configs/plugins/args.plugin ', () => {
+  const originalArgv = process.argv
+  beforeEach( () => {
+    process.argv = originalArgv
+    jest.resetModules()
+  } )
   test( 'should return default values', async () => {
     const argv = await runCommand( [ '-b', '5' ] )
     // console.log( argv ) // para averiguar el objeto que devuelve
@@ -37,6 +42,25 @@ describe( 'Test in configs/plugins/args.plugin ', () => {
       s: false,
       n: 'multiplication-table',
       d: 'outputs',
+    } ) )
+  } )
+
+  test( 'Task: should return configuration with custom values ❌ habia colocado el customOptions en formato arry', async () => {
+    const customOptions = [
+      '-b', '3',
+      '-l', '7',
+      '-s',
+      '-n', 'custom-multiplication-table',
+      '-d', 'customOutputs',
+    ]
+
+    const argv = await runCommand( customOptions )
+    expect( argv ).toEqual( expect.objectContaining( {
+      b: 3,
+      l: 7,
+      s: true,
+      n: 'custom-multiplication-table',
+      d: 'customOutputs',
     } ) )
   } )
 } )
