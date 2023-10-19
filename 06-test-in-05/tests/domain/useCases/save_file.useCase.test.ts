@@ -25,6 +25,7 @@ describe( 'domain/useCases/safe_file.useCase', () => {
   }
   const filePath = `${options.fileDestination}/${options.fileName}.txt`
 
+
   test( 'should save with default values', () => {
     const saveFile = new SaveFile()
     const filePath = 'outputs/table.txt'
@@ -54,5 +55,29 @@ describe( 'domain/useCases/safe_file.useCase', () => {
     expect( result ).toBeTruthy()
     expect( fileExists ).toBeTruthy()
     expect( fileContent ).toBe( options.fileContent )
+  } )
+
+  test( 'should return false if directory could not be created', () => {
+    const saveFile = new SaveFile()
+    const mkdirSpy = jest.spyOn( fs, 'mkdirSync' ).mockImplementation( // aquí le dices que cuando llame el mkdir, va a ejecutar la función con el throw error
+      () => { throw new Error( 'Error with file from testing' ) }
+    )
+    const result = saveFile.execute( options )
+    expect( result ).toBe( false )
+
+    // por cada mock implementation que hagas, necesitas hacer la limpieza de forma MANUAL
+    mkdirSpy.mockRestore()
+  } )
+
+  test( 'should return false id file could not be created', () => {
+    const saveFile = new SaveFile()
+    const writeFileSpy = jest.spyOn( fs, 'writeFileSync' ).mockImplementation( // aquí le dices que cuando llame el mkdir, va a ejecutar la función con el throw error
+      () => { throw new Error( 'Error with writing file from testing' ) }
+    )
+    const result = saveFile.execute( { fileContent: 'HELLO' } )
+
+    expect( result ).toBe( false )
+
+    writeFileSpy.mockRestore()
   } )
 } )

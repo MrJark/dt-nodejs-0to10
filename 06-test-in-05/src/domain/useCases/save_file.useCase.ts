@@ -31,7 +31,7 @@ export class SaveFile implements SaveFileUseCase {
       console.log( 'File created' )
       return true
     } catch ( err ) {
-      console.error( err )
+      // console.error( err ) // se puede hacer con winston para que en la terminal no haya ruido
       return false
     }
 
