@@ -1,4 +1,9 @@
+import { Server } from "./presentation/server"
 
-const names: string = 'fer'
+( async () => {
+  main()
+} )()
 
-console.log(names);
+function main() {
+  Server.start()
+}

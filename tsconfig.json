@@ -13,7 +13,8 @@
   // "exclude": [
   //   "node_modules",
   //   "05-multiplication/**/*.spec.ts",
-  //   "05-multiplication/tests/**/*.test.ts"
+  //   "05-multiplication/tests/**/*.test.ts",
+  // "dist"
   // ],
   // "include": [
   //   "06-test-in-05/src/**/*",
@@ -21,7 +22,8 @@
   // "exclude": [
   //   "node_modules",
   //   "06-test-in-05/**/*.spec.ts",
-  //   "06-test-in-05/tests/**/*.test.ts"
+  //   "06-test-in-05/tests/**/*.test.ts",
+  //   "dist"
   // ],
   "include": [
     "07-NOC/src/**/*",
@@ -29,7 +31,8 @@
   "exclude": [
     "node_modules",
     "07-NOC/**/*.spec.ts",
-    "07-NOC/tests/**/*.test.ts"
+    "07-NOC/tests/**/*.test.ts",
+    "dist"
   ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */

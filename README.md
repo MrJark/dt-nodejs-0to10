@@ -6,6 +6,8 @@ Curso de DevTalles de Nodejs que va de 0 to 10
 
 Cuando vayas a intalar paquetes **debe** de estar justificado. Las instalaciones que estoy haciendo en este repo son en la raiz ya que estoy haciendo un monorepositorio multipaquete para evitar tantos node_modules en el mismo.
 
+Además **todas** las aplicaciones de terceros debes tenerlas centralizadas en un file por si un día quieres eliminarlo o modificarlo, esté todo en el mismo sitio.
+
 * [Nodemon](https://www.npmjs.com/package/nodemon) le dice a Node que cada vez que tenga un cambio haga un **npm start** para que refleje los cambios. **No** se debe usar Nodemon para producción, solo para dependencias.
 
 * Para generar [UUID](https://www.npmjs.com/package/uuid)randoms
@@ -35,6 +37,8 @@ Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el n
   ```
 
 * [Yargs](https://www.npmjs.com/package/yargs) Yargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface
+
+* [Cron](https://www.npmjs.com/package/cron) Cron is a tool that allows you to execute something on a schedule
 
 ## Datos interesantes a tener en cuenta
 
