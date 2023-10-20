@@ -22,6 +22,18 @@ Cuando vayas a intalar paquetes **debe** de estar justificado. Las instalaciones
   
 Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el nodemon que es simplemente ejecutar el comando `npm run dev`
 
+* [Configuración de Node + TypeScript **sin** Nodemon](https://gist.github.com/Klerith/3ba17e86dc4fabd8301a59699b9ffc0b) para el **07-NOC**
+  ```
+    npm i -D typescript @types/node ts-node-dev rimraf
+    npx tsc --init --outDir dist/ --rootDir src
+  ```
+  y en la **package.json**:
+  ```json
+    "dev": "tsnd --respawn --clear src/app.ts",
+    "build": "rimraf ./dist && tsc",
+    "start": "npm run build && node dist/app.js"
+  ```
+
 * [Yargs](https://www.npmjs.com/package/yargs) Yargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface
 
 ## Datos interesantes a tener en cuenta
