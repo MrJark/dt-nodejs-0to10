@@ -14,7 +14,6 @@ export class Server {
       () => {
         const date = new Date()
         console.log( '5 seconds', date );
-
       }
     )
   }
