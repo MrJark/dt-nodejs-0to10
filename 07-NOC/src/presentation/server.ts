@@ -13,8 +13,13 @@ export class Server {
     CronService.createJob(
       '*/5 * * * * *', // cada 5 sengundos
       () => {
-        // new CheckService().execute( 'https://google.com' )
-        new CheckService().execute( 'http://localhost:3000' ) // esta es para el testeo con el 08-JSON-server que es un json ficticio con el paquete de json-server
+        const url = 'https://google.com'
+        new CheckService(
+          // inyección de las dependencias del constructor
+          () => console.log( `${url} is ok` ),
+          ( err ) => console.log( err )
+        ).execute( url )
+        // new CheckService().execute( 'http://localhost:3000' ) // esta es para el testeo con el 08-JSON-server que es un json ficticio con el paquete de json-server
       }
     )
   }
