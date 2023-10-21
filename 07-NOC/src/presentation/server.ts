@@ -13,7 +13,8 @@ export class Server {
     CronService.createJob(
       '*/5 * * * * *', // cada 5 sengundos
       () => {
-        new CheckService().execute( 'https://google.com' )
+        // new CheckService().execute( 'https://google.com' )
+        new CheckService().execute( 'http://localhost:3000' ) // esta es para el testeo con el 08-JSON-server que es un json ficticio con el paquete de json-server
       }
     )
   }

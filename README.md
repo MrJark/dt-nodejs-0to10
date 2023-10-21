@@ -16,6 +16,8 @@ Además **todas** las aplicaciones de terceros debes tenerlas centralizadas en u
 
 * [Axios](https://www.npmjs.com/package/axios) sirve para manejar peticiones http/https
 
+* [Json-server](https://www.npmjs.com/package/json-server?activeTab=readme) Get a full fake REST API with zero coding in less than 30 seconds
+
 * [Winston](https://www.npmjs.com/package/winston) es para manejar de una froma más eficiente los console.log
 
 * Configuración de [JEST + TypeScript + Node](https://gist.github.com/Klerith/98d7b1bc0f1525e892f260813cad1007). Como es un monorepo, las configuraciones del package.json si que las tengo que hacer en el archivo que quiero, en este caso en _04-bases-to-test_
