@@ -5,7 +5,7 @@ import fs from 'fs';
 export class FileSystemDatasource implements LogDatasource {
 
   private readonly logPath = 'logsPath/'
-  private readonly lowLogsPath = 'logsPath/logs_low.log'
+  private readonly allLogsPath = 'logsPath/logs_all.log'
   private readonly mediumLogsPath = 'logsPath/logs_medium.log'
   private readonly highLogsPath = 'logsPath/logs_high.log'
 
@@ -18,11 +18,12 @@ export class FileSystemDatasource implements LogDatasource {
       fs.mkdirSync( this.logPath )
     }
 
-    // if ( fs.existsSync( this.lowLogsPath ) ) return
-    // fs.writeFileSync( this.lowLogsPath, '' )
+    // if ( fs.existsSync( this.allLogsPath ) ) return
+    // fs.writeFileSync( this.allLogsPath, '' )
     // foma elegante de hacer las creación de los 3 directorios
+
     [
-      this.lowLogsPath,
+      this.allLogsPath,
       this.mediumLogsPath,
       this.highLogsPath,
     ].forEach( path => {
@@ -32,11 +33,43 @@ export class FileSystemDatasource implements LogDatasource {
 
   }
 
-  saveLog( log: LogEntity ): Promise<void> {
-    throw new Error( "Method not implemented." );
+  async saveLog( newLog: LogEntity ): Promise<void> {
+    const logAsJSON = `${JSON.stringify( newLog )}\n`
+
+    fs.appendFileSync( this.allLogsPath, logAsJSON )
+
+    if ( newLog.level === LogSeverityLevel.low ) return
+
+    if ( newLog.level === LogSeverityLevel.medium ) {
+      fs.appendFileSync( this.mediumLogsPath, logAsJSON )
+    } else {
+      fs.appendFileSync( this.highLogsPath, logAsJSON )
+    }
   }
-  getLog( severityLevel: LogSeverityLevel ): Promise<LogEntity[]> {
-    throw new Error( "Method not implemented." );
+
+  private getLogsFromFile = ( path: string ): LogEntity[] => {
+    const content = fs.readFileSync( path, 'utf-8' ) // para leer el contenido y el tipo de language
+
+    const stringLogs = content.split( '\n' ).map( // para serparar los logs por el salto de línea que he puento en el saveLog
+      log => LogEntity.fromJSON( log )
+    ) // esto se puede reducir a 👇🏼
+    // const stringLogs = content.split( '\n' ).map( LogEntity.fromJSON )
+
+    return stringLogs
+  }
+
+  async getLog( severityLevel: LogSeverityLevel ): Promise<LogEntity[]> {
+    switch ( severityLevel ) {
+      case LogSeverityLevel.low:
+        return this.getLogsFromFile( this.allLogsPath )
+      case LogSeverityLevel.medium:
+        return this.getLogsFromFile( this.mediumLogsPath )
+      case LogSeverityLevel.high:
+        return this.getLogsFromFile( this.highLogsPath )
+
+      default:
+        throw new Error( `This ${severityLevel} is not implemented` )
+    }
   }
 
 }
