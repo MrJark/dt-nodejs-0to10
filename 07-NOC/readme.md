@@ -17,3 +17,5 @@ He quitado del package.json **general** la dependencia de _nodemon_ porque voy a
 
     PROD=false
   ```
+3. Crear los módulos de node con `npm i`
+4. Ejecutar `npm run dev`
