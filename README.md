@@ -42,6 +42,10 @@ Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el n
 
 * [Cron](https://www.npmjs.com/package/cron) Cron is a tool that allows you to execute something on a schedule
 
+* [DOTENV](https://www.npmjs.com/package/dotenv) PARA LEER LAS VARIABLES DE ENTORNO LOCALES ( tienes que bajar y levantar el proceso ( si hay algo corriendo) sino las variables de entorno no se cargarán )
+
+* [env-var](https://www.npmjs.com/package/env-var) para hacer las validaciones pertinentes cunado sean numbers, string, email, booleans, etc. No es imprescindible pero ayuda a las validacioens, que son esenciales y lo bueno es que no tiene dependencias por tanto, es bastante liviano
+
 ## Datos interesantes a tener en cuenta
 
 * Los elementos de NODE se visualizan en consola, lo más comúnn

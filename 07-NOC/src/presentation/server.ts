@@ -16,6 +16,7 @@ export class Server {
     // la palabra static se pone para hacer referencia al start con solo poner el punto -> Server.start sino sería muchop más largo la llamada del método start
     console.log( 'Server started...' );
 
+    // ejemplo de media noche '00 00 00 * * *'
     CronService.createJob(
       '*/9 * * * * *', // cada 9 sengundos
       () => {
