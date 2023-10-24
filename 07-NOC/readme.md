@@ -4,3 +4,16 @@ He quitado del package.json **general** la dependencia de _nodemon_ porque voy a
 ```json
   "nodemon": "3.0.1",
 ```
+
+## Para dev
+
+1. Clonar el archivo .env.template y pasarlo a .env
+2. Configurar las variables de entorno:
+  ```.env
+    PORT=
+
+    MAILER_EMAIL=
+    MAILER_SECRET_KEY=
+
+    PROD=false
+  ```
