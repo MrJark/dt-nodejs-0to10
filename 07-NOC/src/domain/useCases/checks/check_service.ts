@@ -1,15 +1,18 @@
+import { LogEntity, LogSeverityLevel } from '../../entities/log.entity';
+import { LogRepository } from "../../repository/log.repository"
 
 interface CheckServiceUseCase {
   execute( url: string ): Promise<boolean>
 }
 
-type SuccessCallback = () => void
-type ErrorCallback = ( error: string ) => void
+type SuccessCallback = ( () => void ) | undefined
+type ErrorCallback = ( ( error: string ) => void ) | undefined
 
 export class CheckService implements CheckServiceUseCase {
 
   // las inyecciones d edependencias se suelen hacer en los constructores
   constructor (
+    private readonly logRepository: LogRepository,
     private readonly successCallback: SuccessCallback,
     private readonly errorCallback: ErrorCallback
   ) { }
@@ -22,12 +25,19 @@ export class CheckService implements CheckServiceUseCase {
         throw new Error( `Error on check service ${url}` )
       }
 
-      this.successCallback()
+      const log = new LogEntity( `Service ${url} working`, LogSeverityLevel.low )
+      this.logRepository.saveLog( log )
+
+      this.successCallback && this.successCallback() // validación para que el undefined no de error
       return true
     } catch ( err ) {
-      // console.log( `${err}` );
+      // console.log( `${ err } ` );
+      const errorMessage = `${url} is not ok. Error: ${err}`
 
-      this.errorCallback( `${err}` )
+      const log = new LogEntity( errorMessage, LogSeverityLevel.high )
+      this.logRepository.saveLog( log )
+
+      this.errorCallback && this.errorCallback( errorMessage ) // validación para que el undefined no de error
       return false
     }
   }

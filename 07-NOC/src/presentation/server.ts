@@ -1,7 +1,13 @@
 import { CronJob } from "cron";
 import { CronService } from "./cron/cron_service";
 import { CheckService } from "../domain/useCases/checks/check_service";
+import { LogRepositoryImplementation } from "../infrastructure/repositories/log.repository.implementation";
+import { FileSystemDatasource } from "../infrastructure/datasources/file_system.datasource";
 
+
+const fileSystemLogRepository = new LogRepositoryImplementation(
+  new FileSystemDatasource()
+)
 
 export class Server {
 
@@ -11,11 +17,13 @@ export class Server {
     console.log( 'Server started...' );
 
     CronService.createJob(
-      '*/5 * * * * *', // cada 5 sengundos
+      '*/9 * * * * *', // cada 9 sengundos
       () => {
         const url = 'https://google.com'
+        // const url = 'http://localhost:3000' // para cuando tengas arriba el 08-JSON-server
         new CheckService(
           // inyección de las dependencias del constructor
+          fileSystemLogRepository,
           () => console.log( `${url} is ok` ),
           ( err ) => console.log( err )
         ).execute( url )
