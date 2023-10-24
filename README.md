@@ -46,7 +46,7 @@ Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el n
 
 * [env-var](https://www.npmjs.com/package/env-var) para hacer las validaciones pertinentes cunado sean numbers, string, email, booleans, etc. No es imprescindible pero ayuda a las validacioens, que son esenciales y lo bueno es que no tiene dependencias por tanto, es bastante liviano
 
-* [Nodemailer](https://www.npmjs.com/package/nodemailer) to Send emails from Node.js – easy as cake!
+* [Nodemailer](https://www.npmjs.com/package/nodemailer) to Send emails from Node.js – easy as cake!,. Para usar _nodemailer_ con **typescript** necesitas instalar también, pero como devDependencies, el archivo de types ya que no fue construido con typescript a través del siguiente comando: `npm i --save-dev @types/nodemailer`
 
 ## Datos interesantes a tener en cuenta
 
