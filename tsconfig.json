@@ -25,13 +25,22 @@
   //   "06-test-in-05/tests/**/*.test.ts",
   //   "dist"
   // ],
+  // "include": [
+  //   "07-NOC/src/**/*",
+  // ],
+  // "exclude": [
+  //   "node_modules",
+  //   "07-NOC/**/*.spec.ts",
+  //   "07-NOC/tests/**/*.test.ts",
+  //   "dist"
+  // ],
   "include": [
-    "07-NOC/src/**/*",
+    "09-NOC/src/**/*",
   ],
   "exclude": [
     "node_modules",
-    "07-NOC/**/*.spec.ts",
-    "07-NOC/tests/**/*.test.ts",
+    "09-NOC/**/*.spec.ts",
+    "09-NOC/tests/**/*.test.ts",
     "dist"
   ],
   "compilerOptions": {
@@ -61,7 +70,8 @@
     // "rootDir": "03-TypeScript/src", /* Specify the root folder within your source files. */
     // "rootDir": "05-multiplication/src", /* Specify the root folder within your source files. */
     // "rootDir": "06-test-in-05/src", /* Specify the root folder within your source files. */
-    "rootDir": "07-NOC/src", /* Specify the root folder within your source files. */
+    // "rootDir": "07-NOC/src", /* Specify the root folder within your source files. */
+    "rootDir": "09-NOC/src", /* Specify the root folder within your source files. */
     // "moduleResolution": "node10",                     /* Specify how TypeScript looks up a file from a given module specifier. */
     // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
