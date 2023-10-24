@@ -46,6 +46,8 @@ Para que estos cambios se ejecuten, tienes que tener abierto en la terminal el n
 
 * [env-var](https://www.npmjs.com/package/env-var) para hacer las validaciones pertinentes cunado sean numbers, string, email, booleans, etc. No es imprescindible pero ayuda a las validacioens, que son esenciales y lo bueno es que no tiene dependencias por tanto, es bastante liviano
 
+* [Nodemailer](https://www.npmjs.com/package/nodemailer) to Send emails from Node.js – easy as cake!
+
 ## Datos interesantes a tener en cuenta
 
 * Los elementos de NODE se visualizan en consola, lo más comúnn
