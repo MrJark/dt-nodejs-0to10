@@ -4,7 +4,7 @@ import { CheckService } from "../domain/useCases/checks/check_service";
 import { LogRepositoryImplementation } from "../infrastructure/repositories/log.repository.implementation";
 import { FileSystemDatasource } from "../infrastructure/datasources/file_system.datasource";
 import { envs } from "../config/plugins/envs.plugin";
-import { EmailServices } from "./email/email.services";
+import { EmailServices } from './email/email.services';
 
 
 const fileSystemLogRepository = new LogRepositoryImplementation(
@@ -18,15 +18,21 @@ export class Server {
     // la palabra static se pone para hacer referencia al start con solo poner el punto -> Server.start sino sería muchop más largo la llamada del método start
     console.log( 'Server started...' );
     // console.log( envs.MAILER_EMAIL );
+
     const emailService = new EmailServices()
-    emailService.sendEmail( {
-      to: 'fivewebservices@gmail.com',
-      subject: 'Logs de sistemas',
-      htlmBody: `
-        <h3>Logs de sistemas - NOC</h3>
-        <p>Un párrafo de relleno bru</p>
-      `
-    } )
+
+    emailService.sendEmailWithFileSystemLogs( [
+      envs.MAILER_EMAIL // el email donde quieres que te sea enviado
+    ] )
+
+    // emailService.sendEmail( {
+    //   to: envs.MAILER_EMAIL,
+    //   subject: 'Logs de sistemas',
+    //   htmlBody: `
+    //     <h3>Logs de sistemas - NOC</h3>
+    //     <p>Un párrafo de relleno bru</p>
+    //   `
+    // } )
 
     // ejemplo de media noche '00 00 00 * * *'
     // CronService.createJob(
