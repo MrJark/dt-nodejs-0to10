@@ -19,11 +19,14 @@ export class Server {
     console.log( 'Server started...' );
     // console.log( envs.MAILER_EMAIL );
 
-    const emailService = new EmailServices()
 
-    emailService.sendEmailWithFileSystemLogs( [
-      envs.MAILER_EMAIL // el email donde quieres que te sea enviado
-    ] )
+
+    // const emailService = new EmailServices(
+    //   fileSystemLogRepository
+    // )
+    // emailService.sendEmailWithFileSystemLogs( [
+    //   envs.MAILER_EMAIL // el email donde quieres que te sea enviado
+    // ] )
 
     // emailService.sendEmail( {
     //   to: envs.MAILER_EMAIL,
