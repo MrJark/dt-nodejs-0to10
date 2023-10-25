@@ -6,7 +6,7 @@ import { envs } from '../../config/plugins/envs.plugin'
 interface SendEmailOptions {
   to: string | string[],
   subject: string,
-  htlmBody: string,
+  htmlBody: string,
   attachements?: Attachement[],
 }
 
@@ -25,14 +25,14 @@ export class EmailServices {
   } )
 
   async sendEmail( options: SendEmailOptions ): Promise<boolean> {
-    const { htlmBody, subject, to, attachements = [] } = options
+    const { htmlBody, subject, to, attachements = [] } = options
 
     try {
 
       const sentInformation = await this.transporter.sendMail( {
         to: to,
         subject: subject,
-        html: htlmBody,
+        html: htmlBody,
         attachments: attachements
       } )
 
@@ -58,7 +58,7 @@ export class EmailServices {
     ]
 
     return this.sendEmail( {
-      to, subject, attachements, htlmBody
+      to, subject, attachements, htmlBody
     } )
   }
 }
