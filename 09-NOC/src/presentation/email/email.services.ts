@@ -27,7 +27,7 @@ export class EmailServices {
   } )
 
   constructor ( // inyec de dependencias
-    private readonly logRepository: LogRepository
+    // private readonly logRepository: LogRepository // no hace falta ya porque las he colocado en el send_email_logs.ts
   ) { }
 
   async sendEmail( options: SendEmailOptions ): Promise<boolean> {
@@ -50,7 +50,7 @@ export class EmailServices {
         origin: 'email.service.ts'
       } )
 
-      this.logRepository.saveLog( sucessLog )
+      // this.logRepository.saveLog( sucessLog )
       return true
     } catch ( error ) {
 
@@ -60,7 +60,7 @@ export class EmailServices {
         origin: 'email.service.ts'
       } )
 
-      this.logRepository.saveLog( errorLog )
+      // this.logRepository.saveLog( errorLog )
       return false
     }
   }

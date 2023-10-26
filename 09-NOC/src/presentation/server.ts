@@ -3,13 +3,15 @@ import { CronService } from "./cron/cron_service";
 import { CheckService } from "../domain/useCases/checks/check_service";
 import { LogRepositoryImplementation } from "../infrastructure/repositories/log.repository.implementation";
 import { FileSystemDatasource } from "../infrastructure/datasources/file_system.datasource";
-import { envs } from "../config/plugins/envs.plugin";
+import { envs } from '../config/plugins/envs.plugin';
 import { EmailServices } from './email/email.services';
+import { SendEmailLogs } from "../domain/useCases/email/send_email_logs";
 
 
 const fileSystemLogRepository = new LogRepositoryImplementation(
   new FileSystemDatasource()
 )
+const emailService = new EmailServices()
 
 export class Server {
 
@@ -20,9 +22,13 @@ export class Server {
     // console.log( envs.MAILER_EMAIL );
 
 
-
-    // const emailService = new EmailServices(
+    // new SendEmailLogs( // el sent email a través del useCases y no del service
+    //   emailService,
     //   fileSystemLogRepository
+    // ).execute( envs.MAILER_EMAIL )
+
+    // const emailService = new EmailServices( // puedo quitar esto de aquí porque lo está tomando del servicio y lo quiero tomar del useCases
+    //   // fileSystemLogRepository // esto ya no me sirve porque lo he creado en el send_email_logs.ts
     // )
     // emailService.sendEmailWithFileSystemLogs( [
     //   envs.MAILER_EMAIL // el email donde quieres que te sea enviado
