@@ -44,12 +44,12 @@
   //   "dist"
   // ],
   "include": [
-    "10-MongoDB_PostgreSQL/src/**/*",
+    "10-NOC_MongoDB_PostgreSQL/src/**/*",
   ],
   "exclude": [
     "node_modules",
-    "10-MongoDB_PostgreSQL/**/*.spec.ts",
-    "10-MongoDB_PostgreSQL/tests/**/*.test.ts",
+    "10-NOC_MongoDB_PostgreSQL/**/*.spec.ts",
+    "10-NOC_MongoDB_PostgreSQL/tests/**/*.test.ts",
     "dist"
   ],
   "compilerOptions": {
@@ -81,7 +81,7 @@
     // "rootDir": "06-test-in-05/src", /* Specify the root folder within your source files. */
     // "rootDir": "07-NOC/src", /* Specify the root folder within your source files. */
     // "rootDir": "09-NOC/src", /* Specify the root folder within your source files. */
-    "rootDir": "10-MongoDB_PostgreSQL/src", /* Specify the root folder within your source files. */
+    "rootDir": "10-NOC_MongoDB_PostgreSQL/src", /* Specify the root folder within your source files. */
     // "moduleResolution": "node10",                     /* Specify how TypeScript looks up a file from a given module specifier. */
     // "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     // "paths": {},                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
