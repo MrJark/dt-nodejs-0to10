@@ -42,23 +42,23 @@ export class EmailServices {
         attachments: attachements
       } )
 
-      console.log( sentInformation );
+      // console.log( sentInformation );
 
-      const sucessLog = new LogEntity( {
-        level: LogSeverityLevel.low,
-        message: 'Email sent',
-        origin: 'email.service.ts'
-      } )
+      // const sucessLog = new LogEntity( {
+      //   level: LogSeverityLevel.low,
+      //   message: 'Email sent',
+      //   origin: 'email.service.ts'
+      // } )
 
       // this.logRepository.saveLog( sucessLog )
       return true
     } catch ( error ) {
 
-      const errorLog = new LogEntity( {
-        level: LogSeverityLevel.high,
-        message: 'Email not sent',
-        origin: 'email.service.ts'
-      } )
+      // const errorLog = new LogEntity( {
+      //   level: LogSeverityLevel.high,
+      //   message: 'Email not sent',
+      //   origin: 'email.service.ts'
+      // } )
 
       // this.logRepository.saveLog( errorLog )
       return false
