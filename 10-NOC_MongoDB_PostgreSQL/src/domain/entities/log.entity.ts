@@ -50,4 +50,15 @@ export class LogEntity {
 
     return log
   }
+
+  // esto es para adaptar la datasource de mongo
+  static fromObject = ( object: { [ key: string ]: any } ): LogEntity => {
+    const { message, level, createdAt, origin } = object
+
+    const log = new LogEntity( {
+      message, level, createdAt, origin
+    } )
+
+    return log
+  }
 }
