@@ -49,6 +49,7 @@ export class FileSystemDatasource implements LogDatasource {
 
   private getLogsFromFile = ( path: string ): LogEntity[] => {
     const content = fs.readFileSync( path, 'utf-8' ) // para leer el contenido y el tipo de language
+    if ( content === '' ) return []
 
     const stringLogs = content.split( '\n' ).map( // para serparar los logs por el salto de línea que he puento en el saveLog
       log => LogEntity.fromJSON( log )
