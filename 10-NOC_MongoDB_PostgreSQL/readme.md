@@ -27,3 +27,6 @@ He quitado del package.json **general** la dependencia de _nodemon_ porque voy a
 ## DBs
 
 Voy a usar [Mongoose](https://mongoosejs.com)
+Voy a usar [Prisma](https://www.prisma.io/docs/getting-started/quickstart) (siguiendo la doc con PostgreSQL)
+
+También ha otra que es [TypeORM](https://typeorm.io) la cual no voy a usar pero existe

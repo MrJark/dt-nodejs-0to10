@@ -10,5 +10,8 @@
   },
   "keywords": [],
   "author": "Chema",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "prisma": "^5.5.2"
+  }
 }
