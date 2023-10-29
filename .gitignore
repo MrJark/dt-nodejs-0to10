@@ -26,3 +26,6 @@ testDestination/
 
 # mongo
 mongo/
+
+# postgres
+postgres/

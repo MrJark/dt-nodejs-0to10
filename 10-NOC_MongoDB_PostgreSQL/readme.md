@@ -18,6 +18,10 @@ He quitado del package.json **general** la dependencia de _nodemon_ porque voy a
     PROD=false
   ```
 3. Crear los módulos de node con `npm i`
+4. Levantar las bases de datos con
+  ```
+    docker compose up -d
+  ```
 4. Ejecutar `npm run dev`
 
 ## DBs
