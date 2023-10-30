@@ -8,15 +8,27 @@ import { EmailServices } from './email/email.services';
 import { SendEmailLogs } from "../domain/useCases/email/send_email_logs";
 import { MongoLogDatasource } from "../infrastructure/datasources/mongo_log.datasource";
 import { PostgresLogDatasource } from "../infrastructure/datasources/postgre_log.datasource";
+import { CheckServiceMultiple } from "../domain/useCases/checks/check_service_multiple";
 
 
-const logRepository = new LogRepositoryImplementation(
-  // new FileSystemDatasource(), // solo esta se manda a el mail, las otras dos se mandan a las respectivas DBs
-  // new MongoLogDatasource(), // para usar Mongo
-  new PostgresLogDatasource(), // para usar postgres
+// const logRepository = new LogRepositoryImplementation(
+//   // new FileSystemDatasource(), // solo esta se manda a el mail, las otras dos se mandan a las respectivas DBs
+//   // new MongoLogDatasource(), // para usar Mongo
+//   new PostgresLogDatasource(), // para usar postgres
+// )
+// para usar el multiple repository necesito crearun logRepository para cada uno de ellos y por tanto el de arriba lo comento
+const fsLogRepository = new LogRepositoryImplementation(
+  new FileSystemDatasource()
 )
-const emailService = new EmailServices()
+const mongoLogRepository = new LogRepositoryImplementation(
+  new MongoLogDatasource()
+)
+const postgresLogRepository = new LogRepositoryImplementation(
+  new PostgresLogDatasource()
+)
 
+
+const emailService = new EmailServices()
 
 export class Server {
 
@@ -49,14 +61,35 @@ export class Server {
     // } )
 
     // ejemplo de media noche '00 00 00 * * *'
+    // este es para un solo servicio
+    // CronService.createJob(
+    //   '*/9 * * * * *', // cada 9 sengundos
+    //   () => {
+    //     const url = 'https://google.com'
+    //     // const url = 'http://localhost:3000' // para cuando tengas arriba el 08-JSON-server
+    //     new CheckService(
+    //       // inyección de las dependencias del constructor
+    //       logRepository,
+    //       () => console.log( `${url} is ok` ),
+    //       ( err ) => console.log( err )
+    //     ).execute( url )
+    //     // new CheckService().execute( 'http://localhost:3000' ) // esta es para el testeo con el 08-JSON-server que es un json ficticio con el paquete de json-server
+    //   }
+    // )
+
+    // para los múltiples servicips
     CronService.createJob(
       '*/9 * * * * *', // cada 9 sengundos
       () => {
         const url = 'https://google.com'
         // const url = 'http://localhost:3000' // para cuando tengas arriba el 08-JSON-server
-        new CheckService(
+        new CheckServiceMultiple(
           // inyección de las dependencias del constructor
-          logRepository,
+          [
+            fsLogRepository,
+            mongoLogRepository,
+            postgresLogRepository,
+          ],
           () => console.log( `${url} is ok` ),
           ( err ) => console.log( err )
         ).execute( url )
