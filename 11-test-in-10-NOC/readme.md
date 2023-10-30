@@ -31,3 +31,7 @@ Voy a usar [Mongoose](https://mongoosejs.com)
 Voy a usar [Prisma](https://www.prisma.io/docs/getting-started/quickstart) (siguiendo la doc con PostgreSQL)
 
 También ha otra que es [TypeORM](https://typeorm.io) la cual no voy a usar pero existe
+
+## Test
+
+Configuración y creación de los archivos de Jest con Node y TS -> [Link](https://import.cdn.thinkific.com/643563/courses/2405661/Configurar_Jest_con_TypeScript_en_Node-230914-091434.pdf)
