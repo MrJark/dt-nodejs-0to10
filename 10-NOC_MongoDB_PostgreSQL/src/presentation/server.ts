@@ -7,11 +7,13 @@ import { envs } from '../config/plugins/envs.plugin';
 import { EmailServices } from './email/email.services';
 import { SendEmailLogs } from "../domain/useCases/email/send_email_logs";
 import { MongoLogDatasource } from "../infrastructure/datasources/mongo_log.datasource";
+import { PostgresLogDatasource } from "../infrastructure/datasources/postgre_log.datasource";
 
 
 const logRepository = new LogRepositoryImplementation(
-  new FileSystemDatasource()
-  // new MongoLogDatasource() // para usar Mongo
+  // new FileSystemDatasource(), // solo esta se manda a el mail, las otras dos se mandan a las respectivas DBs
+  // new MongoLogDatasource(), // para usar Mongo
+  new PostgresLogDatasource(), // para usar postgres
 )
 const emailService = new EmailServices()
 
@@ -46,19 +48,19 @@ export class Server {
     // } )
 
     // ejemplo de media noche '00 00 00 * * *'
-    // CronService.createJob(
-    //   '*/9 * * * * *', // cada 9 sengundos
-    //   () => {
-    //     const url = 'https://google.com'
-    //     // const url = 'http://localhost:3000' // para cuando tengas arriba el 08-JSON-server
-    //     new CheckService(
-    //       // inyección de las dependencias del constructor
-    //       logRepository,
-    //       () => console.log( `${url} is ok` ),
-    //       ( err ) => console.log( err )
-    //     ).execute( url )
-    //     // new CheckService().execute( 'http://localhost:3000' ) // esta es para el testeo con el 08-JSON-server que es un json ficticio con el paquete de json-server
-    //   }
-    // )
+    CronService.createJob(
+      '*/9 * * * * *', // cada 9 sengundos
+      () => {
+        const url = 'https://google.com'
+        // const url = 'http://localhost:3000' // para cuando tengas arriba el 08-JSON-server
+        new CheckService(
+          // inyección de las dependencias del constructor
+          logRepository,
+          () => console.log( `${url} is ok` ),
+          ( err ) => console.log( err )
+        ).execute( url )
+        // new CheckService().execute( 'http://localhost:3000' ) // esta es para el testeo con el 08-JSON-server que es un json ficticio con el paquete de json-server
+      }
+    )
   }
 }

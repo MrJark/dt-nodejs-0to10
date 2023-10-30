@@ -18,17 +18,17 @@ async function main() {
 
   // para prisma
   const prisma = new PrismaClient()
-  // const newLog = await prisma.logModel.create( {
-  //   data: {
-  //     level: 'LOW',
-  //     message: 'Test msg',
-  //     origin: 'App.ts'
-  //   }
-  // } )
-  // console.log( { newLog } );
+  const newLog = await prisma.logModel.create( {
+    data: {
+      level: 'LOW',
+      message: 'Test msg',
+      origin: 'App.ts'
+    }
+  } )
+  console.log( { newLog } );
   // para leer los logs de prisma
-  const logs = await prisma.logModel.findMany()
-  console.log( logs );
+  // const logs = await prisma.logModel.findMany()
+  // console.log( logs );
 
 
 
@@ -49,5 +49,5 @@ async function main() {
   // console.log( logs );
 
 
-  // Server.start()
+  Server.start()
 }
