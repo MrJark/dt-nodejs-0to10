@@ -78,23 +78,23 @@ export class Server {
     // )
 
     // para los múltiples servicips
-    CronService.createJob(
-      '*/9 * * * * *', // cada 9 sengundos
-      () => {
-        const url = 'https://google.com'
-        // const url = 'http://localhost:3000' // para cuando tengas arriba el 08-JSON-server
-        new CheckServiceMultiple(
-          // inyección de las dependencias del constructor
-          [
-            fsLogRepository,
-            mongoLogRepository,
-            postgresLogRepository,
-          ],
-          () => console.log( `${url} is ok` ),
-          ( err ) => console.log( err )
-        ).execute( url )
-        // new CheckService().execute( 'http://localhost:3000' ) // esta es para el testeo con el 08-JSON-server que es un json ficticio con el paquete de json-server
-      }
-    )
+    // CronService.createJob(
+    //   '*/9 * * * * *', // cada 9 sengundos
+    //   () => {
+    //     const url = 'https://google.com'
+    //     // const url = 'http://localhost:3000' // para cuando tengas arriba el 08-JSON-server
+    //     new CheckServiceMultiple(
+    //       // inyección de las dependencias del constructor
+    //       [
+    //         fsLogRepository,
+    //         mongoLogRepository,
+    //         postgresLogRepository,
+    //       ],
+    //       () => console.log( `${url} is ok` ),
+    //       ( err ) => console.log( err )
+    //     ).execute( url )
+    //     // new CheckService().execute( 'http://localhost:3000' ) // esta es para el testeo con el 08-JSON-server que es un json ficticio con el paquete de json-server
+    //   }
+    // )
   }
 }

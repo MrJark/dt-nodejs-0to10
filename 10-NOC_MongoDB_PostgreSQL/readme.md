@@ -22,7 +22,8 @@ He quitado del package.json **general** la dependencia de _nodemon_ porque voy a
   ```
     docker compose up -d
   ```
-4. Ejecutar `npm run dev`
+5. Ejecutar el comando `npx prisma migrate dev`
+6. Ejecutar `npm run dev`
 
 ## DBs
 
