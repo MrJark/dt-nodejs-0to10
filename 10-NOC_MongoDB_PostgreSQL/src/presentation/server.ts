@@ -17,6 +17,7 @@ const logRepository = new LogRepositoryImplementation(
 )
 const emailService = new EmailServices()
 
+
 export class Server {
 
   public static start() {
