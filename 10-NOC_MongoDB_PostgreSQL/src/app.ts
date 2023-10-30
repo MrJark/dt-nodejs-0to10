@@ -1,6 +1,6 @@
 // import 'dotenv/config'
 import { envs } from './config/plugins/envs.plugin';
-import { LogModel, MongoDB } from "./data/mongo";
+import { LogModel, MongoDB } from "./data/mongoo";
 import { Server } from "./presentation/server"
 import { PrismaClient } from '@prisma/client'
 
